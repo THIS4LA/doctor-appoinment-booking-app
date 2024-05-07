@@ -5,7 +5,18 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        primaryColor: "#141E46",
+        secondaryColor: "#BB2525",
+        tertiaryColor: "#FF6969",
+        quaternaryColor: "#FFF5E0",
+      },
+
+      boxShadow: {
+        panelShadow: "rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;",
+      },
+    },
   },
   plugins: [],
 }

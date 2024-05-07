@@ -4,8 +4,8 @@ function App() {
   return (
     <>
       <div>
-        <h1 className="text-amber-400 text-[50px] drop-shadow-lg
-        hover:text-blue-200 hover:underline" >Hello World</h1>
+        <h1 className="text-primaryColor text-[20px] shadow-panelShadow
+        hover:text-tertiaryColor hover:underline sm:text-[30px] md:text-[50px]" >Hello World</h1>
         </div>
         
     </>
