@@ -1,6 +1,6 @@
-import React, { useEffect } from "react";
+import { useEffect,useRef } from "react";
 import logo from "../../assets/images/logo.png";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import userImg from "../../assets/images/avatar-icon.png";
 import { BiMenu } from "react-icons/bi";
 
@@ -58,17 +58,14 @@ const Header = () => {
           </div>
 
           {/*===========menu==========*/}
-          <div className="navigation" ref={muneRef} onClick={toggleMenu}>
+          <div className="navigation" ref={menuRef} onClick={toggleMenu}>
             <ul className="menu flex items-center gap-[2.7rem]">
               {navLinks.map((link, index) => (
                 <li key={index}>
                   <NavLink
-                    to={Link.path}
-                    className={(navClass) =>
-                      navClass.isActive
-                        ? "text-primaryColor text-[16px] leading-7 font-[600]"
-                        : "text-textColor text-[16px] leading-7 font-[500] hover:text-primaryColor"
-                    }
+                    to={link.path}
+                    activeClassName="text-primaryColor text-[16px] leading-7 font-[600]"
+                    className="text-textColor text-[16px] leading-7 font-[500] hover:text-primaryColor"
                   >
                     {link.display}
                   </NavLink>
