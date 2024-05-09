@@ -1,4 +1,4 @@
-import { useEffect,useRef } from "react";
+import { useEffect, useRef } from "react";
 import logo from "../../assets/images/logo.png";
 import { NavLink, Link } from "react-router-dom";
 import userImg from "../../assets/images/avatar-icon.png";
@@ -37,16 +37,16 @@ const Header = () => {
       } else {
         headerRef.current.classList.remove("sticky_header");
       }
-    })
-  }
+    });
+  };
 
-  useEffect(()=>{
-    handleStickyHeader()
+  useEffect(() => {
+    handleStickyHeader();
 
-    return ()=> window.removeEventListener('scroll', handleStickyHeader)
+    return () => window.removeEventListener("scroll", handleStickyHeader);
   });
   // could be wrong
-  const toggleMenu = () => menuRef.current.classList.toggle('show__Menu');
+  const toggleMenu = () => menuRef.current.classList.toggle("show__Menu");
 
   return (
     <header className="header flex items-center" ref={headerRef}>
