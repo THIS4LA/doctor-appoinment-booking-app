@@ -1,6 +1,7 @@
 import React from "react";
 import About from "./../components/About/About";
 import ServiceList from "../components/Services/ServiceList";
+import DoctorList from "../components/Doctors/DoctorList";
 
 import heroImg01 from "../assets/images/hero-img01.png";
 import heroImg02 from "../assets/images/hero-img02.png";
@@ -14,6 +15,7 @@ import avatarIcon from "../assets/images/avatar-icon.png";
 import { Link } from "react-router-dom";
 
 import { BiArrowToRight } from "react-icons/bi";
+
 
 const Home = () => {
   return (
@@ -253,6 +255,7 @@ const Home = () => {
               unmatched,expert health care.From the lab to the clinic.
             </p>
           </div>
+          <DoctorList />
         </div>
       </section>
       {/* ===========our great doctors end========== */}
