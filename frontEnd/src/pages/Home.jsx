@@ -1,4 +1,5 @@
 import React from 'react'
+import About from './../components/About/About'
 
 import heroImg01 from "../assets/images/hero-img01.png";
 import heroImg02 from "../assets/images/hero-img02.png";
@@ -13,7 +14,6 @@ import { BiArrowToRight } from 'react-icons/bi';
 
 const Home = () => {
   return (
-    <>
       <>
         <section className="hero__section pt-[60px] 2xl:h-[800px]">
           <div className="container">
@@ -158,11 +158,10 @@ const Home = () => {
                 </div>
               </div>
             </div>
-
           </div>
         </section>
+        <About />
       </>
-    </>
   );
 };
 
