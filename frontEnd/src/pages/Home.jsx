@@ -2,6 +2,7 @@ import React from "react";
 import About from "./../components/About/About";
 import ServiceList from "../components/Services/ServiceList";
 import DoctorList from "../components/Doctors/DoctorList";
+import Testimonial from "../components/Testimonial/Testimonial";
 
 import heroImg01 from "../assets/images/hero-img01.png";
 import heroImg02 from "../assets/images/hero-img02.png";
@@ -276,6 +277,21 @@ const Home = () => {
           </div>
         </div>
       </section>
+            {/* ===========faq section end=========== */}
+      {/* =======testimonial======= */}
+      <section>
+        <div className="container">
+          <div className="xl:w-[470px] mx-auto">
+            <h2 className="heading text-center">What our patient say</h2>
+            <p className="text__para text-center">
+              world-class care for everyone. Our health system offers
+              unmatched,expert health care.From the lab to the clinic.
+            </p>
+          </div>
+          {/* <Testimonial /> */}
+        </div>
+      </section>
+      {/* =======testimonial end======= */}
     </>
   );
 };
