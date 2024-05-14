@@ -2,7 +2,7 @@ import React from "react";
 import About from "./../components/About/About";
 import ServiceList from "../components/Services/ServiceList";
 import DoctorList from "../components/Doctors/DoctorList";
-import Testimonial from "../components/Testimonial/Testimonial";
+// import Testimonial from "../components/Testimonial/Testimonial";
 
 import heroImg01 from "../assets/images/hero-img01.png";
 import heroImg02 from "../assets/images/hero-img02.png";
