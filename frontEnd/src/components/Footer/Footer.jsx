@@ -85,29 +85,28 @@ const Footer = () => {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="pb-16 pt-10">
+    <footer className="pb-16 pt-10 bg-gradient-to-tr from-white via-indigo-100 to-blue-100">
       <div className="container">
         <div className="flex justify-between flex-col md:flex-row flex-wrap gap-[30px]">
           <div>
             <img src={logo} alt="logo" />
             <p className="text-[16px] leading-7 font-[400] text-textColor mt-4">
-              Copyright {year} developed by Thisal Karunarathna with muhibur
-              tutorial YT all right Reserved!
+              Copyright © {year} developed by Thisal Karunarathna all rights
+              reserved.
             </p>
-
             <div className="flex items-center gap-3 mt-4">
               {socialLinks.map((link, index) => (
                 <Link
                   to={link.path}
                   key={index}
-                  className="w-9 h-9 border border-solid border-[#181A1E] rounded-full flex items-center
-                  justify-center group hover:bg-primaryColor hover:border-none"
-                >
-                  {link.icon}
-                </Link>
+                  className="w-9 h-9 border border-solid
+              border-[#181A1E] rounded-full flex items-center justify-center
+              group hover:bg-primaryColor hover:border-none"
+                >{link.icon}</Link>
               ))}
             </div>
-            {/* Link start */}
+          </div>
+            {/* Quick Links */}
             <div>
               <h2 className="text-[20px] leading-[30px] font-[700] mb-6 text-headingColor">
                 Quick Links
@@ -118,7 +117,7 @@ const Footer = () => {
                   <li key={index} className="mb-4">
                     <Link
                       to={item.path}
-                      className="text-[16px] leading-7 font-[400] text-textColor"
+                      className="text-[16px] leading-7 font-[400] text-textColor hover:text-gray-400"
                     >
                       {item.display}
                     </Link>
@@ -126,11 +125,11 @@ const Footer = () => {
                 ))}
               </ul>
             </div>
-            {/* Link end */}
-            {/* Link start */}
+            {/* Quick Links end */}
+            {/* I want Links */}
             <div>
               <h2 className="text-[20px] leading-[30px] font-[700] mb-6 text-headingColor">
-                I want to:
+                I want to
               </h2>
 
               <ul>
@@ -138,7 +137,7 @@ const Footer = () => {
                   <li key={index} className="mb-4">
                     <Link
                       to={item.path}
-                      className="text-[16px] leading-7 font-[400] text-textColor"
+                      className="text-[16px] leading-7 font-[400] text-textColor hover:text-gray-400"
                     >
                       {item.display}
                     </Link>
@@ -146,8 +145,8 @@ const Footer = () => {
                 ))}
               </ul>
             </div>
-            {/* Link end */}
-            {/* Link start */}
+            {/* I want Links end */}
+            {/* Support Links */}
             <div>
               <h2 className="text-[20px] leading-[30px] font-[700] mb-6 text-headingColor">
                 Support
@@ -158,7 +157,7 @@ const Footer = () => {
                   <li key={index} className="mb-4">
                     <Link
                       to={item.path}
-                      className="text-[16px] leading-7 font-[400] text-textColor"
+                      className="text-[16px] leading-7 font-[400] text-textColor hover:text-gray-400"
                     >
                       {item.display}
                     </Link>
@@ -166,8 +165,7 @@ const Footer = () => {
                 ))}
               </ul>
             </div>
-            {/* Link end */}
-          </div>
+            {/* Support Links end */}
         </div>
       </div>
     </footer>
