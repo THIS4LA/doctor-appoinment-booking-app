@@ -61,7 +61,7 @@ const FeedBackForm = () => {
         ></textarea>
       </div>
       <button type="submit" onClick={handleSubmitReview} className="btn">
-        Submit FeedBack
+        Submit Feedback
       </button>
     </form>
   );

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -48,18 +48,22 @@ const Login = () => {
           </div>
 
           <div className="mt-7">
-          <button type="submit"
-          className="w-full bg-primaryColor text-white text-[18px] leading-[30px] rounded-lg px-4 py-3"
-
-          >
-            Login
-          </button>
+            <button
+              type="submit"
+              className="w-full bg-primaryColor text-white text-[18px] leading-[30px] rounded-lg px-4 py-3"
+            >
+              Login
+            </button>
           </div>
-
-          <p className="mt-5 text-textColor text-center">Don't have an account?<Link to='/register' className="text-primaryColor font-medium ml-1 hover:text-irisBlueColor">Register</Link></p>
-
-
-
+          <p className="mt-5 text-textColor text-center">
+            Don't have an account?
+            <Link
+              to="/register"
+              className="text-primaryColor font-medium ml-1 hover:text-irisBlueColor"
+            >
+              Register
+            </Link>
+          </p>
         </form>
       </div>
     </section>
