@@ -182,7 +182,7 @@ const Signup = () => {
                     name="photo"
                     id="customFile"
                     onChange={handleFileInputChange}
-                    accept=".jpg, .png"
+                    accept=".jpg, .png, .jpg,"
                     className="absolute top-0 left-0 w-full h-full opacity-0 cursor-pointer"
                   />
                   <label
