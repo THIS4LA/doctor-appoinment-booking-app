@@ -64,8 +64,11 @@ const Header = () => {
                 <li key={index}>
                   <NavLink
                     to={link.path}
-                    activeClassName="text-primaryColor text-[16px] leading-7 font-[600]"
-                    className="text-textColor text-[16px] leading-7 font-[500] hover:text-primaryColor"
+                    className={({ isActive }) =>
+                      isActive
+                        ? "text-primaryColor text-[16px] leading-7 font-[600]"
+                        : "text-textColor text-[16px] leading-7 font-[500] hover:text-primaryColor"
+                    }
                   >
                     {link.display}
                   </NavLink>
