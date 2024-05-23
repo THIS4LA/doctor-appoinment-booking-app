@@ -1,7 +1,7 @@
 import { useEffect, useRef, useContext } from "react";
 import logo from "../../assets/images/logo.png";
 import { NavLink, Link } from "react-router-dom";
-import userImg from "../../assets/images/avatar-icon.png";
+import userImg from "../../assets/images/user.png";
 import { BiMenu } from "react-icons/bi";
 import { authContext } from "../../context/AuthContext";
 
@@ -95,7 +95,7 @@ const Header = () => {
                   <h2 className="text-[16px] font-[500] text-headingColor">{user?.name}</h2>
                   <figure className="w-[35px] h-[35px] rounded-full overflow-hidden">
                     <img
-                      src={user?.photo}
+                      src={user?.photo || userImg}
                       className="w-full rounded-full object-cover"
                       alt="dp"
                     />
