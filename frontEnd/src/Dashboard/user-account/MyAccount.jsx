@@ -21,7 +21,9 @@ const MyAccount = () => {
   } = useFetchData(`${BASE_URL}/users/profile/me`);
 
   const handleLogout = () => {
-    dispatch({ type: "LOGOUT" });
+        dispatch({ type: 'LOGOUT' });
+        localStorage.removeItem('authToken');
+        navigate('/login', { replace: true });
   };
 
   const handleDeleteAccount = () => {
