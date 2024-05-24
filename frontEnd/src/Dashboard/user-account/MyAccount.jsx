@@ -7,21 +7,18 @@ import MyBookings from "./MyBookings";
 
 import useFetchData from "../../hooks/useFetchData"; // Ensure this hook is correctly imported
 import { BASE_URL } from "../../config";
-import HashLoader from "react-spinners/HashLoader";
 import Error from "../../components/Error/Error";
 import Loading from "../../components/Loader/Loading";
 
 const MyAccount = () => {
   const { dispatch } = useContext(authContext);
-  const [tab, setTab] = useState("bookings");
+  const [tab, setTab] = useState("settings");
 
   const {
     data: userData,
     loading,
     error,
   } = useFetchData(`${BASE_URL}/users/profile/me`);
-
-  console.log(userData, "userdata");
 
   const handleLogout = () => {
     dispatch({ type: "LOGOUT" });
@@ -34,7 +31,7 @@ const MyAccount = () => {
   return (
     <section>
       <div className="max-w-[1170px] px-5 mx-auto">
-        {loading && !error &&
+        {loading && !error && 
         <Loading />
         }
         {error && !loading && <Error errMessage={error} />}
@@ -44,9 +41,9 @@ const MyAccount = () => {
               <div className="flex items-center justify-center">
                 <figure className="w-[100px] h-[100px] rounded-full border-2 border-solid border-primaryColor">
                   <img
-                    src={userData.profileImage || userImg}
+                    src={userData.photo || userImg}
                     alt="userImg"
-                    className="w-full h-full rounded-full"
+                    className="w-full h-full rounded-full object-cover"
                   />
                 </figure>
               </div>
@@ -84,29 +81,29 @@ const MyAccount = () => {
             <div className="md:col-span-2 md:px-[30px]">
               <div>
                 <button
-                  onClick={() => setTab("bookings")}
-                  className={`${
-                    tab === "bookings" &&
-                    "bg-primaryColor text-white font-normal"
-                  } py-2 px-5 rounded-md text-headingColor font-semibold text-[16px]
-            leading-7 border border-solid border-primaryColor`}
-                >
-                  My Bookings
-                </button>
-                <button
                   onClick={() => setTab("settings")}
                   className={`${
                     tab === "settings" &&
                     "bg-primaryColor text-white font-normal"
-                  } ml-4 py-2 px-5 rounded-md text-headingColor font-semibold text-[16px]
+                  } py-2 px-5 rounded-md text-headingColor font-semibold text-[16px]
             leading-7 border border-solid border-primaryColor`}
                 >
                   Profile Settings
                 </button>
+                <button
+                  onClick={() => setTab("bookings")}
+                  className={`${
+                    tab === "bookings" &&
+                    "bg-primaryColor text-white font-normal"
+                  } ml-4 py-2 px-5 rounded-md text-headingColor font-semibold text-[16px]
+            leading-7 border border-solid border-primaryColor`}
+                >
+                  My Bookings
+                </button>
               </div>
 
               {tab === "bookings" && <MyBookings />}
-              {tab === "settings" && <Profile />}
+              {tab === "settings" && <Profile user={userData}/>}
             </div>
           </div>
         )}
