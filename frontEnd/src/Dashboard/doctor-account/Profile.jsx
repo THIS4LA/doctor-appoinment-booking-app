@@ -25,17 +25,17 @@ const Profile = ({ doctorData }) => {
 
   useEffect(() => {
     setFormData({
-      name: doctorData?.name,
-      email: doctorData?.email,
-      phone: doctorData?.phone,
-      bio: doctorData?.bio,
+      name: doctorData?.name || "N/A",
+      email: doctorData?.email || "N/A",
+      phone: doctorData?.phone || "N/A",
+      bio: doctorData?.bio || "N/A",
       gender: doctorData?.gender,
-      specialization: doctorData?.specialization,
+      specialization: doctorData?.specialization || "N/A",
       ticketPrice: doctorData?.ticketPrice,
       qualifications: doctorData?.qualifications,
       experiences: doctorData?.experiences,
       timeSlots: doctorData?.timeSlots,
-      about: doctorData?.about,
+      about: doctorData?.about || "N/A",
       photo: doctorData?.photo,
     });
   }, [doctorData]);
