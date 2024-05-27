@@ -1,4 +1,4 @@
-import React from 'react';
+/* eslint-disable react/prop-types */
 import starIcon from '../../assets/images/Star.png';
 import { BiArrowToRight } from "react-icons/bi";
 import { Link } from 'react-router-dom';
@@ -53,8 +53,8 @@ const DoctorCard = ({ doctor }) => {
                     </p>
                 </div>
                 <Link 
-                    to='/doctors'
-                    className='w-[44px] rounded-full border border-solid border-[#181A1E] flex items-center justify-center group hover:bg-primaryColor hover:border-none'>
+                    to={`/doctors/${doctor._id}`}
+                    className='w-[44px] h-[44px] rounded-full border border-solid border-[#181A1E] flex items-center justify-center group hover:bg-primaryColor hover:border-none'>
                     <BiArrowToRight className='group-hover:text-white w-5 h-5' />
                 </Link>
             </div>
