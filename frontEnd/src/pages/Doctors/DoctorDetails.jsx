@@ -50,7 +50,7 @@ const DoctorDetails = () => {
                   className="bg-[#CCF0F3] text-irisBlueColor py-1 px-6 lg:py-2 lg:px-6 text-[12px]
                 leading-4 lg:text-[16px] lg:leading-7 font-semibold rounded"
                 >
-                  {specialization }
+                  {specialization || "N/A" }
                 </span>
                 <h3 className="text-headingColor text-[22px] leading-9 mt-3 font-bold">
                   {name}
@@ -61,17 +61,17 @@ const DoctorDetails = () => {
                     lg:leading-7 font-semibold text-headingColor"
                   >
                     <img src={starIcon} alt="starIcon" />
-                    {averageRating}
+                    {averageRating|| "N/A"}
                   </span>
                   <span
                     className="flex items-center gap-[6px] text-[14px] leading-5 lg:text-[16px]
                     lg:leading-7 text-[400] font-semibold text-textColor"
                   >
-                    ({totalRating})
+                    ({totalRating|| "N/A"})
                   </span>
                 </div>
                 <p className="text__para text-[14px] leading-6 md:text-[15px] lg:max-w-[390px]">
-                  {bio}
+                  {bio|| "N/A"}
                 </p>
               </div>
             </div>
@@ -97,8 +97,8 @@ const DoctorDetails = () => {
             </div>
             {/* inpage tabs */}
             <div className="mt-[50px]">
-              {tab === "about" && <DoctorAbout />}
-              {tab === "feedback" && <DoctorFeedBack />}
+              {tab === "about" && <DoctorAbout name={name} about={about} qualifications={qualifications} experiences={experience} />}
+              {tab === "feedback" && <DoctorFeedBack reviews={reviews} totalRating={totalRating} />}
             </div>
           </div>
           <div>
