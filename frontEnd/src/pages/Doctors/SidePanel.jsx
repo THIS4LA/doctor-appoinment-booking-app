@@ -1,12 +1,14 @@
+/* eslint-disable react/prop-types */
 import React from "react";
+import convertTime from "../../utils/convertTime";
 
-const SidePanel = () => {
+const SidePanel = ({ticketPrice, timeSlots}) => {
   return (
     <div className="shadow-panelShadow p-3 lg:p-5 rounded-md bg-slate-300">
       <div className="flex items-center justify-between">
         <p className="text__para mt-0 font-semibold">Ticket Price</p>
         <span className="text-[16px] leading-7 lg:text-[22px] lg:leading-8 text-headingColor font-bold">
-          Rs.5000
+          Rs.{ticketPrice || "N/A"}
         </span>
       </div>
       <div className="mt-[30px]">
@@ -14,30 +16,23 @@ const SidePanel = () => {
           Available Time Slots:
         </p>
         <ul className="mt-3">
-          <li className="flex items-center justify-between mb-2">
+        {timeSlots && timeSlots.length > 0 ? (
+            timeSlots.map((item, index) => (
+              <li key={index} className="flex items-center justify-between mb-2">
+                <p className="text-[15px] leading-6 text-textColor font-semibold">
+                  {item.day.charAt(0).toUpperCase() + item.day.slice(1)}
+                </p>
+                <p className="text-[15px] leading-6 text-textColor font-semibold">
+                  {convertTime(item.startingTime)} - {convertTime(item.endingTime)}
+                </p>
+              </li>
+            ))
+          ) : (
             <p className="text-[15px] leading-6 text-textColor font-semibold">
-              Sunday
+              No available time slots.
             </p>
-            <p className="text-[15px] leading-6 text-textColor font-semibold">
-              4.00 PM - 9.30 PM
-            </p>
-          </li>
-          <li className="flex items-center justify-between mb-2">
-            <p className="text-[15px] leading-6 text-textColor font-semibold">
-              Monday
-            </p>
-            <p className="text-[15px] leading-6 text-textColor font-semibold">
-              7.00 PM - 9.30 PM
-            </p>
-          </li>
-          <li className="flex items-center justify-between mb-2">
-            <p className="text-[15px] leading-6 text-textColor font-semibold">
-              Wendsday
-            </p>
-            <p className="text-[15px] leading-6 text-textColor font-semibold">
-              5.00 PM - 9.30 PM
-            </p>
-          </li>
+          )}
+          
         </ul>
       </div>
 

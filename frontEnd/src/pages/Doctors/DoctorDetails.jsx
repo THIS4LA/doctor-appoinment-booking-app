@@ -102,7 +102,7 @@ const DoctorDetails = () => {
             </div>
           </div>
           <div>
-            <SidePanel />
+            <SidePanel ticketPrice={ticketPrice} timeSlots={timeSlots} />
           </div>
         </div>}
       </div>
